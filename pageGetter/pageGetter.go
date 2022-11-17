@@ -6,7 +6,7 @@ import (
 	"net/http"
 )
 
-func GetPage(httpUrl string) []byte {
+func GetHtml(httpUrl string) []byte {
 	res, err := http.Get(httpUrl)
 	if err != nil {
 		log.Fatal(err)

@@ -19,7 +19,7 @@ func main() {
 		if err != nil {
 			log.Fatal(err)
 		}
-		html := PageGetter.GetPage(e)
-		pagePusher.PushPage(uri.Path, html, bucket)
+		html := PageGetter.GetHtml(e)
+		pagePusher.PushHtml(uri.Path, html, bucket)
 	}
 }

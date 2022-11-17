@@ -12,7 +12,7 @@ import (
 	"cloud.google.com/go/storage"
 )
 
-func PushPage(path string, html []byte, bucket string) {
+func PushHtml(path string, html []byte, bucket string) {
 	object := strings.TrimPrefix(path, "/") + "index.html"
 	ctx := context.Background()
 	client, err := storage.NewClient(ctx)
