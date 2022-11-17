@@ -9,10 +9,10 @@ import (
 )
 
 func main() {
-	bucket := "corey-test-bucket"
+	bucket := "test-bucket"
 	pages := []string {
-		"https://www.cnet.com/roadshow/news/2023-toyota-prius-teaser-livestream-debut/",
-		"https://www.cnet.com/",
+		"https://www.your-page.com/about/",
+		"https://www.your-page.com/",
 		}
 	for _, e := range pages {
 		uri, err := url.Parse(e)
