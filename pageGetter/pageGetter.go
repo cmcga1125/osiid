@@ -4,17 +4,9 @@ import (
 	"io"
 	"log"
 	"net/http"
-	"net/url"
-	"os"
-	// "path"
 )
 
-func GetPage(httpUrl string) {
-	u, err := url.Parse(httpUrl)
-	if err != nil {
-		log.Fatal(err)
-	}
-
+func GetPage(httpUrl string) []byte {
 	res, err := http.Get(httpUrl)
 	if err != nil {
 		log.Fatal(err)
@@ -28,13 +20,5 @@ func GetPage(httpUrl string) {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-	path := "./tmp" + u.Path
-	if _, err := os.Stat(path); os.IsNotExist(err) {
-		os.MkdirAll(path, 0777)
-	}
-	error := os.WriteFile(path + "index.html", body, 0777)
-	if error != nil {
-		log.Fatal(error)
-	}
+	return body
 }
